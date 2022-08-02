@@ -1,0 +1,49 @@
+.Nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 4rem;
+    background-color: black;
+}
+.Nav-text{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+}
+.Nav-heading{
+    background-color: white;
+    padding: 0.5rem 1rem;
+    margin: 0rem 1rem;
+    margin-top: 1rem;
+    color: blue;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+.Nav-search{
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem; 
+    display: flex;
+    align-items: center;
+}
+.Nav-input{
+    border: none;
+    height: 1.3rem;
+}
+.Nav-Details{
+    display: flex;
+    color: #ffffff;
+}
+
+.Navbar-Logindetails{
+    margin-left: 1rem;
+}
+.Navbar-username{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.Navbar-useremail{
+    font-size: 0.9rem;
+    font-weight: 400;
+}

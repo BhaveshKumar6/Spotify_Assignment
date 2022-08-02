@@ -1,0 +1,19 @@
+.song_title{
+  display: flex;
+  justify-content: center;
+}
+.songs{
+  display: flex;
+  justify-content: center;
+}
+.song_cover {
+  height: 6rem;
+  width: 6rem;
+}
+table{
+  border-spacing: 0px;
+  width: 90vw;
+}
+td, th{
+  border: 1px solid #000;
+}

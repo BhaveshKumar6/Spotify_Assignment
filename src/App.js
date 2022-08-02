@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Home from "./Components/Home";
+import Login from "./Components/Login/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AddSong from "./Components/AddSong";
+import Navbar from "./Components/Navbar/Navbar";
+import Songs from "./Components/Song/Songs";
+import Artist from "./Components/Artists/Artist";
 
 function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [login, setLogin] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      {!login && <Navbar name={name} email={email}/>}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              login ? (
+                <div>
+                  <Login
+                    name={name}
+                    setName={setName}
+                    email={email}
+                    setEmail={setEmail}
+                    setLogin={setLogin}
+                  />
+                </div>
+              ) : (
+                <Home />
+              )
+            }
+          />
+          <Route path="/song" element={<Songs /> } />
+          <Route path="/addsong" element={<AddSong />} />
+          <Route path="/artists" element={<Artist />} />
+        </Routes>
+
+      </BrowserRouter>
     </div>
   );
 }
